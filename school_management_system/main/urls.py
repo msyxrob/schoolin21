@@ -16,6 +16,4 @@ app_name = 'main'
 urlpatterns = [
     path('', views.index, name='index'),
     path('class/<int:pk>/', views.class_detail, name='class_detail'),
-    path('students/<int:pk>/', views.StudentDetailView.as_view(), name='student_detail'),
-    path('teachers/', views.teacher_list, name='teacher_list'),
 ]

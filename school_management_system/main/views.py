@@ -48,3 +48,8 @@ class StudentDetailView(DetailView):
     model = Student
     template_name = 'main/student_detail.html'
     context_object_name = 'student'
+
+def index(request):
+    school_classes = Class.objects.all()
+    context = {'school_classes': school_classes}
+    return render(request, 'main/index.html', context)
