@@ -1,0 +1,26 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="PyPep8NamingInspection" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <option name="ignoredErrors">
+        <list>
+          <option value="N802" />
+        </list>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyUnresolvedReferencesInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredIdentifiers">
+        <list>
+          <option value="file.*" />
+          <option value="landingpagewebsite_root.crm.views.pc_1" />
+          <option value="landingpagewebsite_root.crm.views.pc_2" />
+          <option value="landingpagewebsite_root.crm.views.pc_3" />
+          <option value="landingpagewebsite_root.crm.views.price" />
+          <option value="landingpagewebsite_root.cms.models.CmsSlider.objects" />
+          <option value="landingpagewebsite_root.price.models.PriceCard.objects" />
+          <option value="landingpagewebsite_root.price.models.PriceTable.objects" />
+        </list>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>
