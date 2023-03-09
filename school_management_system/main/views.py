@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from django.views.generic import DetailView
-from .models import Class
+from .models import Class, Teacher
 from .models import Class, Student
 
 
@@ -32,9 +32,10 @@ from django.views.generic import DetailView
 from .models import Class, Student
 
 
-def index(request):
+def index(request, school_classes=None):
     classes = range(1, 12)
-    return render(request, 'main/index.html', {'classes': classes})
+    return render(request, 'school_classes/index.html', {'SchoolClass': school_classes})
+
 
 
 def class_detail(request, class_number):

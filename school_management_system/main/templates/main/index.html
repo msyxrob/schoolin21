@@ -4,7 +4,7 @@
   <h1>School Classes:</h1>
   <ul>
     {% for school_class in school_classes %}
-      <li><a href="{% url 'class_detail' school_class.pk %}">Class {{ school_class.class_number }}</a></li>
+      <li><a>Class {{ school_class.class_number }}</a></li>
     {% empty %}
       <p>No classes found.</p>
     {% endfor %}
