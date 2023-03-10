@@ -1,0 +1,31 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+  {% comment %} <h1>{{ student.name }} Detail</h1>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Date of Birth</th>
+        <th>Date of Enrollment</th>
+        <th>Payment Percent</th>
+        <th>Balance Due</th>
+        <th>Paid Months</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{ student.date_of_birth }}</td>
+        <td>{{ student.date_of_enrollment }}</td>
+        <td>{{ student.payment_percent }}</td>
+        <td>{{ student.balance_due }}</td>
+        <td>{{ student.paid_months }}</td>
+      </tr>
+    </tbody>
+  </table> {% endcomment %}
+  <h1>{{ student.name }}</h1>
+  <p>Date of Birth: {{ student.date_of_birth }}</p>
+  <p>Date of Enrollment: {{ student.date_of_enrollment }}</p>
+  <p>Payment Percent: {{ student.payment_percent }}</p>
+  <p>Balance Due: {{ student.balance_due }}</p>
+  <p>Paid Months: {{ student.paid_months }}</p>
+{% endblock %}

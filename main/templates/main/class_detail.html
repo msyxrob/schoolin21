@@ -1,0 +1,30 @@
+{% extends 'main/base.html' %}
+
+
+{% block content %}
+  <h1>Class {{ students.class_number }} Detail</h1>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Student Name</th>
+        <th>Date of Birth</th>
+        <th>Date of Enrollment</th>
+        <th>Payment Percent</th>
+        <th>Balance Due</th>
+        <th>Paid Months</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for student in students %}
+        <tr>
+          <td>{{ student.name }}</td>
+          <td>{{ student.date_of_birth }}</td>
+          <td>{{ student.date_of_enrollment }}</td>
+          <td>{{ student.payment_percent }}</td>
+          <td>{{ student.balance_due }}</td>
+          <td>{{ student.paid_months }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}

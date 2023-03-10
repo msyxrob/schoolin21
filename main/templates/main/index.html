@@ -1,0 +1,12 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+  <h1>School Classes:</h1>
+  <ul>
+    {% for school_class in school_classes %}
+      <li><a>Class {{ school_class.class_number }}</a></li>
+    {% empty %}
+      <p>No classes found.</p>
+    {% endfor %}
+  </ul>
+{% endblock %}
