@@ -1,22 +1,18 @@
 from django.shortcuts import render, get_object_or_404
 from django.views.generic import DetailView
-from .models import Class, Teacher, Student
-
+from .models import Class, Teacher, Student, Lesson
 
 def class_detail2(request, class_number):
     class_obj = get_object_or_404(Class, class_number=class_number)
     students = class_obj.students.all()
-    print(students)
-    context = {'class_number': class_number, 'students': students}
+    lessons = Lesson.objects.filter(class_name=class_obj)
+    context = {'class_number': class_number, 'students': students, 'action': 'class_detail', 'lessons': lessons}
     return render(request, 'main/class_detail.html', context)
-
-
 
 def class_detail(request):
     students = Student.objects.all()
-    context = {'students': students}
+    context = {'students': students, 'action': 'students_detail', 'class_number': ''}
     return render(request, 'main/class_detail.html', context)
-
 
 
 def teacher_list(request):
@@ -40,3 +36,8 @@ def student_detail(request, name):
     student = Student.objects.get(name=name)
     context = {'student': student}
     return render(request, 'main/student_detail.html', context)
+
+def teacher_detail(request, name):
+    teacher = Teacher.objects.get(name=name)
+    context = {'teacher': teacher}
+    return render(request, 'main/teacher_detail.html', context)

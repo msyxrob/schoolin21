@@ -1,0 +1,25 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+  <h1>{{ teacher.name }} Detail</h1>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Date of Birth</th>
+        <th>Date of Enrollment</th>
+        <th>Payment Percent</th>
+        <th>Balance Due</th>
+        <th>Paid Months</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{ teacher.date_of_birth }}</td>
+        <td>{{ teacher.date_of_enrollment }}</td>
+        <td>{{ teacher.payment_percent }}</td>
+        <td>{{ teacher.balance_due }}</td>
+        <td>{{ teacher.paid_months }}</td>
+      </tr>
+    </tbody>
+  </table>
+{% endblock %}
