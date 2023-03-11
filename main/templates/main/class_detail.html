@@ -44,8 +44,8 @@
           {% for lesson in lessons %}
             <tr>
               <td>{{ lesson.get_day_display }}</td>
-              <td>{{ lesson.start_time }}</td>
-              <td>{{ lesson.end_time }}</td>
+              <td>{{ lesson.lesson_time.start_time }}</td>
+              <td>{{ lesson.lesson_time.end_time }}</td>
               <td><a href="{% url 'teacher_detail' name=lesson.teacher %}">{{ lesson.teacher }}</a></td>
             </tr>
           {% endfor %}

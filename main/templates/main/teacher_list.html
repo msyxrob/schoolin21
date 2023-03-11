@@ -4,7 +4,7 @@
   <h1>Teachers</h1>
   <ul>
     {% for teacher in teachers %}
-      <li>{{ teacher.name }}</li>
+      <li><a href="{% url 'teacher_detail' name=teacher.name %}">{{ teacher.name }}</a></li>
     {% endfor %}
   </ul>
 {% endblock %}
