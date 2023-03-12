@@ -2,6 +2,9 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.views.generic import DetailView
 from .models import Class, Teacher, Student, Lesson
 from .forms import UserRegistrationForm
+from django.contrib.auth.forms import AuthenticationForm
+from django.contrib.auth import login, logout
+from django.contrib.auth.decorators import login_required
 
 
 
@@ -47,3 +50,31 @@ def register(request):
             return redirect('index')
     else: form = UserRegistrationForm()
     return render(request, 'main/register.html', {'form': form})
+
+
+
+def login_view(request):
+    form = AuthenticationForm()
+    if request.method == 'POST':
+        form = AuthenticationForm(data=request.POST)
+        if form.is_valid():
+            # request.session.save()
+            user = form.get_user()
+            login(request, user)
+            return redirect('index')
+    context = {'form': form}
+    return render(request, 'main/login.html', context)
+
+def some_view(request):
+    if request.user.is_authenticated: print(f'Пользователь {request.user.username} вошел в систему')
+    else: print('Анонимный пользователь')
+
+
+def logout_view(request):
+    logout(request)
+    return redirect('index')
+
+
+@login_required
+def my_view(request):
+    return redirect('index')
