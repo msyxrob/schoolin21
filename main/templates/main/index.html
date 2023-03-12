@@ -1,5 +1,11 @@
 {% extends 'main/base.html' %}
 
+{% block register %}
+  {% if user_permission %}
+    <a class="btn btn-primary" href="{% url 'register' %}">Register User</a>
+  {% endif %}
+{% endblock register %}
+
 {% block content %}
   {% if user.is_authenticated %}
     <h2>Welcome, {{ request.user }} !</h2>
