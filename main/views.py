@@ -1,10 +1,11 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.views.generic import DetailView
 from .models import Class, Teacher, Student, Lesson
-from .forms import UserRegistrationForm
+from django.contrib.auth.models import User, Group
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.decorators import login_required
+from .forms import UserRegistrationForm
 
 
 def check_permission(request, permission):
@@ -31,7 +32,6 @@ def teacher_list(request):
 
 def index(request):
     some_view(request)
-    my_view(request)
     school_classes = Class.objects.all()
     permission = request.user.groups.values_list('name', flat=True)
     permission = 'Admin' in permission or 'Director' in permission
@@ -49,16 +49,28 @@ def teacher_detail(request, name):
     return render(request, 'main/teacher_detail.html', context)
 
 
+
+
 def register(request):
     if check_permission(request, 'Admin') or check_permission(request, 'Director'):
         if request.method == 'POST':
             form = UserRegistrationForm(request.POST)
             if form.is_valid():
-                form.save()
-                return redirect('index')
+                user = form.save(commit=False)
+                user.set_password(form.cleaned_data['password'])
+                user.save()
+                group = form.cleaned_data['group']
+                group.user_set.add(user)
+                user = authenticate(
+                    username=form.cleaned_data['username'],
+                    password=form.cleaned_data['password'],
+                )
+                # login(request, user)
+                return redirect('register')
         else: form = UserRegistrationForm()
         return render(request, 'main/register.html', {'form': form})
     else: return render(request, 'main/error.html', {'error': '404'})
+
 
 
 def login_view(request):
@@ -83,12 +95,6 @@ def logout_view(request):
     print(f'Пользователь {request.user.username} вышел с аккаунта')
     logout(request)
     return redirect('index')
-
-
-@login_required
-def my_view(request):
-    return redirect('index')
-
 
 
 

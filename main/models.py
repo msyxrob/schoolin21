@@ -1,5 +1,7 @@
 from django.db import models
-from django.contrib.auth.models import User
+from django.contrib.auth.models import User, AbstractUser, Group
+from django.contrib.auth import get_user_model
+
 
 def retTime():
     from datetime import datetime, timedelta
@@ -73,15 +75,3 @@ class Lesson(models.Model):
     def __str__(self):
         return f"{self.class_name} - {self.day} - {self.lesson_time} - {self.teacher}"
 
-
-class AccessLevel(models.Model):
-    name = models.CharField(max_length=50)
-    def __str__(self):
-        return self.name
-
-
-class Profile(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
-    access_level = models.ForeignKey(AccessLevel, on_delete=models.CASCADE, default=1)
-    def __str__(self):
-        return f"{self.user}"
