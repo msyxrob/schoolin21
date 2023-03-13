@@ -1,0 +1,270 @@
+[
+    {
+        "model": "main.lessontime",
+        "pk": 1,
+        "fields": {
+            "hour_lesson": 1,
+            "start_time": "08:00:00",
+            "end_time": "08:45:00"
+        }
+    },
+    {
+        "model": "main.lessontime",
+        "pk": 2,
+        "fields": {
+            "hour_lesson": 2,
+            "start_time": "08:50:00",
+            "end_time": "09:35:00"
+        }
+    },
+    {
+        "model": "main.lessontime",
+        "pk": 3,
+        "fields": {
+            "hour_lesson": 3,
+            "start_time": "09:40:00",
+            "end_time": "10:25:00"
+        }
+    },
+    {
+        "model": "main.lessontime",
+        "pk": 4,
+        "fields": {
+            "hour_lesson": 4,
+            "start_time": "10:30:00",
+            "end_time": "11:15:00"
+        }
+    },
+    {
+        "model": "main.lessontime",
+        "pk": 5,
+        "fields": {
+            "hour_lesson": 5,
+            "start_time": "11:20:00",
+            "end_time": "12:05:00"
+        }
+    },
+    {
+        "model": "main.lessontime",
+        "pk": 6,
+        "fields": {
+            "hour_lesson": 6,
+            "start_time": "12:10:00",
+            "end_time": "12:55:00"
+        }
+    },
+    {
+        "model": "main.student",
+        "pk": 2,
+        "fields": {
+            "name": "Abdu",
+            "date_of_birth": "2023-03-06",
+            "date_of_enrollment": "2023-03-06",
+            "payment_percent": "50.00",
+            "balance_due": "5000.00",
+            "paid_months": "10"
+        }
+    },
+    {
+        "model": "main.student",
+        "pk": 3,
+        "fields": {
+            "name": "Ghufron",
+            "date_of_birth": "2023-03-06",
+            "date_of_enrollment": "2023-03-06",
+            "payment_percent": "100.00",
+            "balance_due": "10000.00",
+            "paid_months": "10"
+        }
+    },
+    {
+        "model": "main.student",
+        "pk": 4,
+        "fields": {
+            "name": "Kate",
+            "date_of_birth": "2023-03-06",
+            "date_of_enrollment": "2023-03-06",
+            "payment_percent": "30.00",
+            "balance_due": "3000.00",
+            "paid_months": "10"
+        }
+    },
+    {
+        "model": "main.student",
+        "pk": 5,
+        "fields": {
+            "name": "Lola",
+            "date_of_birth": "2023-03-06",
+            "date_of_enrollment": "2023-03-06",
+            "payment_percent": "100.00",
+            "balance_due": "10000.00",
+            "paid_months": "10"
+        }
+    },
+    {
+        "model": "main.student",
+        "pk": 6,
+        "fields": {
+            "name": "Jabbor",
+            "date_of_birth": "2023-03-06",
+            "date_of_enrollment": "2023-03-06",
+            "payment_percent": "100.00",
+            "balance_due": "10000.00",
+            "paid_months": "10"
+        }
+    },
+    {
+        "model": "main.student",
+        "pk": 7,
+        "fields": {
+            "name": "Eva",
+            "date_of_birth": "2023-03-06",
+            "date_of_enrollment": "2023-03-06",
+            "payment_percent": "100.00",
+            "balance_due": "10000.00",
+            "paid_months": "10"
+        }
+    },
+    {
+        "model": "main.student",
+        "pk": 8,
+        "fields": {
+            "name": "Sam",
+            "date_of_birth": "2023-03-06",
+            "date_of_enrollment": "2023-03-06",
+            "payment_percent": "0.00",
+            "balance_due": "0.00",
+            "paid_months": "10"
+        }
+    },
+    {
+        "model": "main.student",
+        "pk": 9,
+        "fields": {
+            "name": "Spiderman",
+            "date_of_birth": "2021-07-09",
+            "date_of_enrollment": "2023-03-06",
+            "payment_percent": "100.00",
+            "balance_due": "10000.00",
+            "paid_months": "10"
+        }
+    },
+    {
+        "model": "main.teacher",
+        "pk": 3,
+        "fields": {
+            "name": "Ali",
+            "date_of_birth": "2023-03-12",
+            "date_of_enrollment": "2023-03-12",
+            "teachSubj": 1
+        }
+    },
+    {
+        "model": "main.teacher",
+        "pk": 4,
+        "fields": {
+            "name": "Adam",
+            "date_of_birth": "2023-03-12",
+            "date_of_enrollment": "2023-03-12",
+            "teachSubj": 1
+        }
+    },
+    {
+        "model": "main.teacher",
+        "pk": 5,
+        "fields": {
+            "name": "Aziz",
+            "date_of_birth": "2023-03-12",
+            "date_of_enrollment": "2023-03-12",
+            "teachSubj": 1
+        }
+    },
+    {
+        "model": "main.class",
+        "pk": 2,
+        "fields": {
+            "class_number": 10,
+            "students": [
+                2,
+                3,
+                4,
+                5
+            ],
+            "teachers": []
+        }
+    },
+    {
+        "model": "main.class",
+        "pk": 3,
+        "fields": {
+            "class_number": 11,
+            "students": [
+                6
+            ],
+            "teachers": []
+        }
+    },
+    {
+        "model": "main.class",
+        "pk": 4,
+        "fields": {
+            "class_number": 9,
+            "students": [
+                7
+            ],
+            "teachers": []
+        }
+    },
+    {
+        "model": "main.class",
+        "pk": 5,
+        "fields": {
+            "class_number": 8,
+            "students": [
+                8
+            ],
+            "teachers": []
+        }
+    },
+    {
+        "model": "main.lesson",
+        "pk": 8,
+        "fields": {
+            "day": "MON",
+            "lesson_time": 6,
+            "class_name": 2,
+            "teacher": 3
+        }
+    },
+    {
+        "model": "main.lesson",
+        "pk": 9,
+        "fields": {
+            "day": "MON",
+            "lesson_time": 3,
+            "class_name": 2,
+            "teacher": 5
+        }
+    },
+    {
+        "model": "main.lesson",
+        "pk": 10,
+        "fields": {
+            "day": "MON",
+            "lesson_time": 1,
+            "class_name": 2,
+            "teacher": 4
+        }
+    },
+    {
+        "model": "main.subjectlesson",
+        "pk": 1,
+        "fields": {
+            "nameSubject": "Math",
+            "teachers": [
+                4,
+                5
+            ]
+        }
+    }
+]

@@ -10,12 +10,6 @@ def retTime():
 
 
 
-class SubjectLesson(models.Model):
-    nameSubject = models.CharField(max_length=100)
-
-    def __str__(self):
-        return self.nameSubject
-
 
 class LessonTime(models.Model):
     hour_lesson = models.IntegerField()
@@ -74,4 +68,13 @@ class Lesson(models.Model):
 
     def __str__(self):
         return f"{self.class_name} - {self.day} - {self.lesson_time} - {self.teacher}"
+
+
+
+class SubjectLesson(models.Model):
+    nameSubject = models.CharField(max_length=100)
+    teachers = models.ManyToManyField(Teacher)
+
+    def __str__(self):
+        return self.nameSubject
 

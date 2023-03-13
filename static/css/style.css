@@ -1,1 +1,182 @@
  
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
+.align-items-center {
+    align-items: center;
+}
+
+.justify-content-center {
+    justify-content: center;
+}
+
+.justify-content-md-between {
+    justify-content: space-between;
+}
+
+.py-3 {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.mb-4 {
+    margin-bottom: 1.5rem;
+}
+
+.border-bottom {
+    border-bottom: 1px solid #dee2e6;
+}
+
+.text-dark {
+    color: #212529;
+}
+
+.text-decoration-none {
+    text-decoration: none;
+}
+
+.col-md-3 {
+    flex: 0 0 auto;
+    width: 25%;
+}
+
+.mb-2 {
+    margin-bottom: 0.5rem;
+}
+
+.nav {
+    list-style: none;
+}
+
+.nav-link {
+    display: block;
+    padding: 0.5rem 1rem;
+    color: #6c757d;
+    text-decoration: none;
+}
+
+.link-secondary {
+    color: #6c757d;
+}
+
+.px-2 {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+
+.col-12 {
+    flex: 0 0 auto;
+    width: 100%;
+}
+
+.mb-md-0 {
+    margin-bottom: 0;
+}
+
+.me-2 {
+    margin-right: 0.5rem;
+}
+
+.bi {
+    fill: currentColor;
+    vertical-align: text-bottom;
+}
+
+.text-end {
+    text-align: right;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: center;
+    text-decoration: none;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+}
+
+.btn-outline-primary {
+    color: #0d6efd;
+    background-color: transparent;
+    border-color: #0d6efd;
+}
+
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+
+ul {
+    list-style-type: none; /* Убираем маркеры */
+    margin: 0; /* Обнуляем отступы */
+    padding: 0; /* Обнуляем отступы */
+    display: flex; /* Делаем список горизонтальным */
+    justify-content: center; /* Выравниваем элементы по центру */
+}
+
+li {
+    margin: 10px; /* Добавляем отступы между элементами */
+}
+
+li a {
+    text-decoration: none; /* Убираем подчеркивание */
+    color: black; /* Задаем цвет текста */
+}
+
+li a:hover {
+    color: blue; /* Задаем цвет текста при наведении */
+}
+
+/* Стили для заголовка */
+.header {
+    padding: 60px; /* Добавляем отступы */
+    text-align: center; /* Выравниваем текст по центру */
+    background: #1abc9c; /* Задаем цвет фона */
+    color: white; /* Задаем цвет текста */
+    font-size: 30px; /* Задаем размер шрифта */
+    border-bottom: 1px solid black; /* Задаем границу снизу */
+}
+
+/* Стили для кнопок */
+.btn {
+    padding: 10px 20px; /* Добавляем отступы */
+    border: none; /* Убираем границу */
+    border-radius: 5px; /* Задаем скругление углов */
+    cursor: pointer; /* Задаем курсор-указатель */
+}
+
+.btn-primary {
+    background-color: #007bff; /* Задаем цвет фона */
+    color: white; /* Задаем цвет текста */
+}
+
+.btn-outline-primary {
+    background-color: white; /* Задаем цвет фона */
+    color: #007bff; /* Задаем цвет текста */
+    border: 1px solid #007bff; /* Задаем границу */
+}
+
+.btn:hover {
+    opacity: 0.8; /* Задаем прозрачность при наведении */
+}

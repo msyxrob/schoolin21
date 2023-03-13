@@ -1,10 +1,25 @@
 {% extends 'main/base.html' %}
 
 {% block content %}
-  <h1>Teachers</h1>
-  <ul>
-    {% for teacher in teachers %}
-      <li><a href="{% url 'teacher_detail' name=teacher.name %}">{{ teacher.name }}</a></li>
-    {% endfor %}
-  </ul>
+  <center><h1>Teachers</h1></center>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Teacher Name</th>
+        <th>Date of Birth</th>
+        <th>Date of Enrollment</th>
+        <th>Teach Subject</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for teacher in teachers %}
+        <tr>
+          <td><a href="{% url 'teacher_detail' name=teacher.name %}">{{ teacher.name }}</a></td>
+          <td>{{ teacher.date_of_birth }}</td>
+          <td>{{ teacher.date_of_enrollment }}</td>
+          <td><a href="{% url 'subject_detail' name=teacher.teachSubj.nameSubject %}">{{ teacher.teachSubj.nameSubject }}</a></td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
 {% endblock %}

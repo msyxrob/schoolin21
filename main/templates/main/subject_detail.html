@@ -1,0 +1,26 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+  <center><h1>{{ subjectName }} Detail</h1></center>
+  {% if teachers %}
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Teachers name</th>
+          <th>Date of Birth</th>
+          <th>Date of Enrollment</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for teacher in teachers %}
+        <tr>
+          <td><a href="{% url 'teacher_detail' name=teacher.name %}">{{ teacher.name }}</a></td>
+          <td>{{ teacher.date_of_birth }}</td>
+          <td>{{ teacher.date_of_enrollment }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    {% else %} <center><h3>No teachers in this Subject</h3></center>
+  {% endif %}
+{% endblock %}

@@ -8,15 +8,15 @@
 
 {% block content %}
   {% if user.is_authenticated %}
-    <h2>Welcome, {{ request.user }} !</h2>
+    <center><h2>Welcome, {{ request.user }} !</h2></center>
   {% endif %}
 
-  <h1>School Classes:</h1>
+  <center><h1>School Classes:</h1>
   <ul>
     {% for school_class in school_classes %}
       <li><a href="{% url 'class_detail' class_number=school_class.class_number %}">Class {{ school_class.class_number }}</a></li>
     {% empty %}
       <p>No classes found.</p>
     {% endfor %}
-  </ul>
+  </ul></center>
 {% endblock %}
