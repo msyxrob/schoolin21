@@ -1,0 +1,101 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block title %}Profile{% endblock title %}
+
+{% block content %}
+    <div class="pcoded-main-container">
+        <div class="pcoded-wrapper">
+            <div class="pcoded-content">
+                <div class="pcoded-inner-content">
+                    <div class="main-body">
+                        <div class="page-wrapper">
+                            <div class="row">
+                                <div class="col-sm-8">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <h5>Edit Info</h5>
+                                        </div>
+                                        <form action="{% url 'users:profile' %}" method="POST" enctype="multipart/form-data">
+                                            {% csrf_token %}
+                                            <div class="card-block">
+                                                <div class="row">
+                                                    <div class="col-sm-6 mb-4">
+                                                        <div class="form-group">
+                                                            <label for="{{ form.first_name.id_for_label }}">First Name</label>
+                                                            {{ form.first_name }}
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-6 mb-4">
+                                                        <div class="form-group">
+                                                            <label for="{{ form.last_name.id_for_label }}">Last Name</label>
+                                                            {{ form.last_name }}
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-sm-12 mb-4">
+                                                        <div class="form-group">
+                                                            <label for="{{ form.image.id_for_label }}">Select Photo</label>
+                                                            {{ form.image }}
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-sm-6 mb-4">
+                                                        <div class="form-group">
+                                                            <label for="{{ form.username.id_for_label }}">Username</label>
+                                                            {{ form.username }}
+                                                            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                                                        </div>
+                                                    </div>                                                
+                                                    <div class="col-sm-6 mb-4">
+                                                        <div class="form-group">
+                                                            <label for="{{ form.email.id_for_label }}">Email address</label>
+                                                            {{ form.email }}
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-sm-12 mb-2">
+                                                        <div class="form-group">
+                                                            <button type="submit" class="btn btn-primary">Submit</button>
+                                                        </div>
+                                                    </div> 
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="card">
+                                        <div class="card-block">
+                                            <div class="d-flex align-items-center justify-content-center flex-column">
+                                                <div class="w-50 p-3">
+                                                    <img src="{% if user.image %} {{ user.image.url }} {% else %} {% static 'img/users/default_avatar.png' %} {% endif %}" alt="profile image" class="img-fluid rounded-circle">
+                                                </div>
+                                                <div class="text-center">
+                                                    <h4 class="font-weight-bold h6">
+                                                        {{ user }}
+                                                    </h4>
+                                                    <p class="font-italic text-muted">
+                                                        {{ user.email }}
+                                                    </p>
+                                                </div>
+                                            </div>
+
+                                            <div class="small font-weight-light mt-4 text-center text-muted">
+                                                <p>This page is your private space.<br></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>   
+
+
+
+
+{% endblock content %}

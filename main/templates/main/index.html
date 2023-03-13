@@ -2,11 +2,21 @@
 
 {% block register %}
   {% if user_permission %}
-    <a class="btn btn-primary" href="{% url 'register' %}">Register User</a>
+    <a class="btn btn-primary" href="{% url 'users:register' %}">Register User</a>
   {% endif %}
 {% endblock register %}
 
 {% block content %}
+  {% if messages %}
+    <center>
+      <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        {% for message in messages %}
+          {{ message }}
+        {% endfor %}
+        {% comment %} <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button> {% endcomment %}
+      </div>
+    </center>
+  {% endif %}
   {% if user.is_authenticated %}
     <center><h2>Welcome, {{ request.user }} !</h2></center>
   {% endif %}
@@ -14,7 +24,7 @@
   <center><h1>School Classes:</h1>
   <ul>
     {% for school_class in school_classes %}
-      <li><a href="{% url 'class_detail' class_number=school_class.class_number %}">Class {{ school_class.class_number }}</a></li>
+      <li><a href="{% url 'main:class_detail' class_number=school_class.class_number %}">Class {{ school_class.class_number }}</a></li>
     {% empty %}
       <p>No classes found.</p>
     {% endfor %}

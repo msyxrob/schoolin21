@@ -1,0 +1,56 @@
+{% extends 'users/base.html' %}
+
+{% block content %}
+  <div class="card">
+    <div class="card-body text-center">
+        <h3 class="mb-4">Register User</h3>
+        <form action="{% url 'users:register' %}" method="POST">
+            {% csrf_token %}
+            {% if messages or form.errors %}
+              <div class="alert 
+              {% if messages %} alert-success {% else %} alert-warning {% endif %} 
+              alert-dismissible fade show" role="alert">
+                {% if messages or form.errors %}
+                  {% if messages %}
+                    {% for message in messages %}
+                      {{ message }}
+                    {% endfor %}
+                  {% else %} {{ form.errors }}
+                  {% endif %}
+                {% endif %}
+              </div><br>
+            {% endif %}
+            <div class="input-group mb-3">
+              {{ form.first_name }}
+            </div>
+
+            <div class="input-group mb-3">
+              {{ form.last_name }}
+            </div>
+
+            <div class="input-group mb-3">
+              {{ form.username }}
+            </div>
+
+            <div class="input-group mb-3">
+              {{ form.email }}
+            </div>
+
+            <div class="input-group mb-4">
+              {{ form.password1 }}
+            </div>
+            
+            <div class="input-group mb-4">
+              {{ form.password2 }}
+            </div>
+            
+            <div class="input-group mb-3">
+              {{ form.group }}
+            </div>
+
+            <button type="submit" class="btn btn-primary shadow-2 mb-4">Register</button>
+        </form>
+    </div>
+  </div>
+
+{% endblock %}

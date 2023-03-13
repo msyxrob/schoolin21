@@ -14,10 +14,10 @@
     <tbody>
       {% for teacher in teachers %}
         <tr>
-          <td><a href="{% url 'teacher_detail' name=teacher.name %}">{{ teacher.name }}</a></td>
+          <td><a href="{% url 'main:teacher_detail' name=teacher.name %}">{{ teacher.name }}</a></td>
           <td>{{ teacher.date_of_birth }}</td>
           <td>{{ teacher.date_of_enrollment }}</td>
-          <td><a href="{% url 'subject_detail' name=teacher.teachSubj.nameSubject %}">{{ teacher.teachSubj.nameSubject }}</a></td>
+          <td><a href="{% url 'main:subject_detail' name=teacher.teachSubj.nameSubject %}">{{ teacher.teachSubj.nameSubject }}</a></td>
         </tr>
       {% endfor %}
     </tbody>

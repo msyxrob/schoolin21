@@ -1,14 +1,9 @@
 from django.db import models
-from django.contrib.auth.models import User, AbstractUser, Group
-from django.contrib.auth import get_user_model
-
 
 def retTime():
     from datetime import datetime, timedelta
     fTime = datetime.now().replace(hour=8, minute=0, second=0, microsecond=0)
     return fTime, fTime + timedelta(minutes=45)
-
-
 
 
 class LessonTime(models.Model):
@@ -62,10 +57,9 @@ class Lesson(models.Model):
         ('FRI', 'Friday'),
     ]
     day = models.CharField(choices=DAY_CHOICES, max_length=3)
-    lesson_time = models.ForeignKey('LessonTime', on_delete=models.CASCADE)
-    class_name = models.ForeignKey('Class', on_delete=models.CASCADE)
-    teacher = models.ForeignKey('Teacher', on_delete=models.CASCADE)
-
+    lesson_time = models.ForeignKey(LessonTime, on_delete=models.CASCADE)
+    class_name = models.ForeignKey(Class, on_delete=models.CASCADE)
+    teacher = models.ForeignKey(Teacher, on_delete=models.CASCADE)
     def __str__(self):
         return f"{self.class_name} - {self.day} - {self.lesson_time} - {self.teacher}"
 

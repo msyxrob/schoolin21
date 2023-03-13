@@ -1,10 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import Class, Teacher, Student, Lesson, SubjectLesson
-from django.contrib.auth.forms import AuthenticationForm
-from django.contrib.auth import login, logout, authenticate
-from django.contrib.auth.decorators import login_required
-from .forms import UserRegistrationForm
-
+from django.contrib.auth import logout
 
 def check_permission(request, permission):
     return request.user.groups.filter(name=permission).exists()
@@ -53,47 +49,6 @@ def subject_detail(request, name):
 
 
 
-
-def register(request):
-    if check_permission(request, 'Admin') or check_permission(request, 'Director'):
-        if request.method == 'POST':
-            form = UserRegistrationForm(request.POST)
-            if form.is_valid():
-                user = form.save(commit=False)
-                user.set_password(form.cleaned_data['password'])
-                user.save()
-                group = form.cleaned_data['group']
-                group.user_set.add(user)
-                user = authenticate(
-                    username=form.cleaned_data['username'],
-                    password=form.cleaned_data['password'],
-                )
-                return redirect('register')
-        else: form = UserRegistrationForm()
-        return render(request, 'main/register.html', {'form': form})
-    else: return render(request, 'main/error.html', {'error': '404 Page Not Found'})
-
-
-
-def login_view(request):
-    form = AuthenticationForm()
-    if request.method == 'POST':
-        form = AuthenticationForm(data=request.POST)
-        if form.is_valid():
-            user = form.get_user()
-            login(request, user)
-            return redirect('index')
-    context = {'form': form}
-    return render(request, 'main/login.html', context)
-
-
 def some_view(request):
     if request.user.is_authenticated: print(f'Пользователь {request.user.username} вошел в систему')
     else: print('Анонимный пользователь')
-
-
-def logout_view(request):
-    print(f'Пользователь {request.user.username} вышел с аккаунта')
-    logout(request)
-    return redirect('index')
-

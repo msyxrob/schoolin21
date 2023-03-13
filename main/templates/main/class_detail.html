@@ -17,7 +17,7 @@
     <tbody>
       {% for student in students %}
         <tr>
-          <td><a href="{% url 'student_detail' name=student.name %}">{{ student.name }}</a></td>
+          <td><a href="{% url 'main:student_detail' name=student.name %}">{{ student.name }}</a></td>
           <td>{{ student.date_of_birth }}</td>
           <td>{{ student.date_of_enrollment }}</td>
           <td>{{ student.payment_percent }}</td>
@@ -45,7 +45,7 @@
           {% for lesson in lessons %}
             <tr>
               <td>{{ lesson.get_day_display }}</td>
-              <td><a href="{% url 'teacher_detail' name=lesson.teacher %}">{{ lesson.teacher }}</a></td>
+              <td><a href="{% url 'main:teacher_detail' name=lesson.teacher %}">{{ lesson.teacher }}</a></td>
               <td>{{ lesson.teacher.teachSubj }}</td>
               <td>{{ lesson.lesson_time.start_time }}</td>
               <td>{{ lesson.lesson_time.end_time }}</td>
