@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="https://appsrv1-147a1.kxcdn.com/data-able-v100-enh1/css/style.css">
     <!-- dark mode css -->
     <link rel="stylesheet" href="https://appsrv1-147a1.kxcdn.com/data-able-v100-enh1/css/dark.css">
-
+    {% block scripts %}{% endblock scripts %}
 </head>
 <body>
     <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
@@ -28,10 +28,10 @@
 
         <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
             <li><a href="{% url 'main:index' %}" class="btn btn-primary shadow-2 mb-1">Home</a></li>
+            <li><a href="{% url 'main:search' %}" class="btn btn-primary shadow-2 mb-1">Search</a></li>
             <li><a href="{% url 'main:students' %}" class="btn btn-primary shadow-2 mb-1">Students</a></li>
             <li><a href="{% url 'main:teachers' %}" class="btn btn-primary shadow-2 mb-1">Teachers</a></li>
         </ul>
-
         
         <div class="col-md-3 text-end">
             {% block register %}{% endblock register %}
@@ -45,6 +45,7 @@
         </div>
         
     </header>
+    
     <div class='container'>
         {% block content %}{% endblock content %}
     </div>

@@ -1,6 +1,8 @@
 from django.shortcuts import render, get_object_or_404, redirect
+from django.views.decorators.csrf import csrf_exempt
 from .models import Class, Teacher, Student, Lesson, SubjectLesson
 from django.contrib.auth import logout
+import json
 
 def check_permission(request, permission):
     return request.user.groups.filter(name=permission).exists()
@@ -37,10 +39,23 @@ def student_detail(request, name):
     context = {'student': student}
     return render(request, 'main/student_detail.html', context)
 
+
+def student_info(request):
+    if request.method == 'POST':
+        name = json.loads(request.body)['name']
+        student = Student.objects.get(name=name)
+        context = {'student': student}
+        return render(request, 'main/student_detail.html', context)
+    else: return render(request, 'main/error.html', context={'error': 'Student not found'})
+
+
+
+
 def teacher_detail(request, name):
     teacher = Teacher.objects.get(name=name)
     context = {'teacher': teacher}
     return render(request, 'main/teacher_detail.html', context)
+
 
 def subject_detail(request, name):
     subject = SubjectLesson.objects.get(nameSubject=name)
@@ -52,3 +67,7 @@ def subject_detail(request, name):
 def some_view(request):
     if request.user.is_authenticated: print(f'Пользователь {request.user.username} вошел в систему')
     else: print('Анонимный пользователь')
+
+def search(request):
+    context = {}
+    return render(request, 'main/search.html', context=context)

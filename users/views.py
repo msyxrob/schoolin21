@@ -44,7 +44,7 @@ def register_user(request):
                 return redirect('users:register')
         else: form = UserRegistrationForm()
         return render(request, 'users/register.html', {'form': form})
-    else: return render(request, 'users/error.html', {'error': '404 Page Not Found'})
+    else: return render(request, 'main/error.html', {'error': '404 Page Not Found'})
 
 
 

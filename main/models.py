@@ -28,11 +28,41 @@ class Student(models.Model):
         return self.name
 
 
+class Nation(models.Model):
+    nation = models.CharField(max_length=20)
+
+    def __str__(self):
+        return self.nation
+
+class Category(models.Model):
+    category = models.CharField(max_length=20)
+
+    def __str__(self):
+        return self.category
+
+
+class Gender(models.Model):
+    name = models.CharField(max_length=10)
+
+    def __str__(self):
+        return self.name
+
+
 class Teacher(models.Model):
     name = models.CharField(max_length=100)
     date_of_birth = models.DateField()
     date_of_enrollment = models.DateField()
     teachSubj = models.ForeignKey('SubjectLesson', on_delete=models.CASCADE)
+    gender = models.ForeignKey(Gender, on_delete=models.CASCADE)
+    nation = models.ForeignKey(Nation, on_delete=models.CASCADE)
+    category = models.ForeignKey(Category, on_delete=models.CASCADE)
+    work_experience = models.IntegerField()
+    admission_year = models.IntegerField()
+    mail = models.CharField(max_length=50)
+    number_phone = models.CharField(max_length=20)
+    number_whatsapp = models.CharField(max_length=20)
+    date_certification = models.DateField(auto_now_add=True)
+    address = models.CharField(max_length=100)
 
     def __str__(self):
         return self.name
@@ -67,7 +97,7 @@ class Lesson(models.Model):
 
 class SubjectLesson(models.Model):
     nameSubject = models.CharField(max_length=100)
-    teachers = models.ManyToManyField(Teacher)
+    teachers = models.ManyToManyField(Teacher, blank=True)
 
     def __str__(self):
         return self.nameSubject
