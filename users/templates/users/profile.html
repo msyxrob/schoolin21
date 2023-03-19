@@ -59,6 +59,13 @@
                                                             <button type="submit" class="btn btn-primary">Submit</button>
                                                         </div>
                                                     </div> 
+                                                    <div class="col-sm-12 mb-2">
+                                                        <div class="form-group">
+                                                            <a class="btn btn-primary" style="color: white" href="{% url 'users:create_folder' %}">Create Folder</a>
+                                                            <a class="btn btn-primary" style="color: white" href="{% url 'users:upload_file' %}">Upload File</a>
+                                                            <a class="btn btn-primary" style="color: white" href="{% url 'users:view_folders' %}">View Folders</a>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </form>

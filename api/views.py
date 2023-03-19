@@ -1,6 +1,8 @@
 from main.models import Student
 from django.shortcuts import render
 from django.http import JsonResponse
+from django.conf import settings
+import os
 
 def get_names(request):
     search = request.GET.get('search')
@@ -16,3 +18,5 @@ def get_names(request):
         'status': True,
         'payload': payload
     })
+
+

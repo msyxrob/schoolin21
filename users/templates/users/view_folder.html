@@ -1,0 +1,38 @@
+{% extends 'users/base.html' %}
+
+
+{% block content %}
+
+<div class="card">
+    <div class="card-body text-center">
+        <h3 class="mb-4">Files in {{ folder.name }}</h3>
+        {% if files %}
+          <h3>Files:</h3>
+          <ul>
+            {% for file in files %}
+              <li>
+                <a href="{{ file.url }}">
+                  <li>
+                    {{ file.name }}__|__
+                    <a href="{% url 'users:delete_file_or_folder' status="file" pk=file.pk %}">
+                      (Удалить)
+                    </a>
+                  </li>
+                </a>
+              </li>
+            {% endfor %}
+          </ul>
+          <ul>
+          </ul>
+        {% else %}
+          <p>
+            No files in this folder. But you can add
+            <a href="{% url 'users:upload_file' %}">
+              Files
+            </a>
+          </p>
+        {% endif %}
+    </div>
+</div>
+
+{% endblock %}

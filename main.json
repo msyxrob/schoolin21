@@ -1,1 +1,142 @@
-[{"model": "main.lessontime", "pk": 1, "fields": {"hour_lesson": 1, "start_time": "08:00:00", "end_time": "08:45:00"}}, {"model": "main.student", "pk": 61, "fields": {"name": "Ali", "date_of_birth": "2023-03-17", "date_of_enrollment": "2023-03-17", "payment_percent": "100.00", "balance_due": "100.00", "paid_months": "5000"}}, {"model": "main.student", "pk": 62, "fields": {"name": "Abdu", "date_of_birth": "2023-03-17", "date_of_enrollment": "2023-03-17", "payment_percent": "50.00", "balance_due": "50.00", "paid_months": "1000"}}, {"model": "main.student", "pk": 63, "fields": {"name": "Vali", "date_of_birth": "2023-03-17", "date_of_enrollment": "2023-03-17", "payment_percent": "100.00", "balance_due": "100.00", "paid_months": "5000"}}, {"model": "main.nation", "pk": 1, "fields": {"nation": "Tajik"}}, {"model": "main.nation", "pk": 2, "fields": {"nation": "Uzbek"}}, {"model": "main.category", "pk": 1, "fields": {"category": "Высшая"}}, {"model": "main.category", "pk": 2, "fields": {"category": "2"}}, {"model": "main.gender", "pk": 1, "fields": {"name": "Man"}}, {"model": "main.gender", "pk": 2, "fields": {"name": "Woman"}}, {"model": "main.teacher", "pk": 1, "fields": {"name": "Alikhon", "date_of_birth": "2023-03-17", "date_of_enrollment": "2023-03-17", "teachSubj": 1, "gender": 1, "nation": 1, "category": 1, "work_experience": 15, "admission_year": 2015, "mail": "asd@gmail.com", "number_phone": "+888888888", "number_whatsapp": "+888888888", "date_certification": "2023-03-17", "address": "Address TEST"}}, {"model": "main.class", "pk": 1, "fields": {"class_number": 10, "students": [61, 62, 63], "teachers": [1]}}, {"model": "main.lesson", "pk": 1, "fields": {"day": "MON", "lesson_time": 1, "class_name": 1, "teacher": 1}}, {"model": "main.subjectlesson", "pk": 1, "fields": {"nameSubject": "Math", "teachers": []}}]
+[
+    {
+        "model": "main.lessontime",
+        "pk": 1,
+        "fields": {
+            "hour_lesson": 1,
+            "start_time": "08:00:00",
+            "end_time": "08:45:00"
+        }
+    },
+    {
+        "model": "main.student",
+        "pk": 61,
+        "fields": {
+            "name": "Ali",
+            "date_of_birth": "2023-03-17",
+            "date_of_enrollment": "2023-03-17",
+            "payment_percent": "100.00",
+            "balance_due": "100.00",
+            "paid_months": "5000"
+        }
+    },
+    {
+        "model": "main.student",
+        "pk": 62,
+        "fields": {
+            "name": "Abdu",
+            "date_of_birth": "2023-03-17",
+            "date_of_enrollment": "2023-03-17",
+            "payment_percent": "50.00",
+            "balance_due": "50.00",
+            "paid_months": "1000"
+        }
+    },
+    {
+        "model": "main.student",
+        "pk": 63,
+        "fields": {
+            "name": "Vali",
+            "date_of_birth": "2023-03-17",
+            "date_of_enrollment": "2023-03-17",
+            "payment_percent": "100.00",
+            "balance_due": "100.00",
+            "paid_months": "5000"
+        }
+    },
+    {
+        "model": "main.nation",
+        "pk": 1,
+        "fields": {
+            "nation": "Tajik"
+        }
+    },
+    {
+        "model": "main.nation",
+        "pk": 2,
+        "fields": {
+            "nation": "Uzbek"
+        }
+    },
+    {
+        "model": "main.category",
+        "pk": 1,
+        "fields": {
+            "category": "Высшая"
+        }
+    },
+    {
+        "model": "main.category",
+        "pk": 2,
+        "fields": {
+            "category": "2"
+        }
+    },
+    {
+        "model": "main.gender",
+        "pk": 1,
+        "fields": {
+            "name": "Man"
+        }
+    },
+    {
+        "model": "main.gender",
+        "pk": 2,
+        "fields": {
+            "name": "Woman"
+        }
+    },
+    {
+        "model": "main.teacher",
+        "pk": 1,
+        "fields": {
+            "name": "Alikhon",
+            "date_of_birth": "2023-03-17",
+            "date_of_enrollment": "2023-03-17",
+            "teachSubj": 1,
+            "gender": 1,
+            "nation": 1,
+            "category": 1,
+            "work_experience": 15,
+            "admission_year": 2015,
+            "mail": "asd@gmail.com",
+            "number_phone": "+888888888",
+            "number_whatsapp": "+888888888",
+            "date_certification": "2023-03-17",
+            "address": "Address TEST"
+        }
+    },
+    {
+        "model": "main.class",
+        "pk": 1,
+        "fields": {
+            "class_number": 10,
+            "students": [
+                61,
+                62,
+                63
+            ],
+            "teachers": [
+                1
+            ]
+        }
+    },
+    {
+        "model": "main.lesson",
+        "pk": 1,
+        "fields": {
+            "day": "MON",
+            "lesson_time": 1,
+            "class_name": 1,
+            "teacher": 1
+        }
+    },
+    {
+        "model": "main.subjectlesson",
+        "pk": 1,
+        "fields": {
+            "nameSubject": "Math",
+            "teachers": []
+        }
+    }
+]
